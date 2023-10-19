@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding = "16dp"
+        android:fitsSystemWindows="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="@android:color/white"
+            android:textSize = "20sp"
+            android:text = "Dashboard"/>
+
+        <ImageView
+            android:id="@+id/history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="350dp"
+            android:layout_marginTop="-25dp"
+            android:onClick="HistoryView"
+            android:src="@drawable/baseline_arrow_forward_ios_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/historytag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="-24dp"
+            android:onClick="HistoryView"
+            android:text="History"
+            android:textColor="@color/white"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/GraphView"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_alignParentTop="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/black"
+        android:showDividers="middle"
+        app:layout_constraintTop_toBottomOf="@+id/GraphView"
+        tools:layout_editor_absoluteX="1dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/black"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/goalWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="15sp"
+                android:paddingTop="10sp"
+                android:paddingEnd="15sp"
+                android:paddingBottom="10sp"
+                android:text="160"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/goalRange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="15sp"
+                android:paddingTop="10sp"
+                android:paddingEnd="15sp"
+                android:paddingBottom="10sp"
+                android:text="155-160"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="15sp"
+                android:paddingTop="10sp"
+                android:paddingEnd="15sp"
+                android:paddingBottom="10sp"
+                android:text="162"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="15sp"
+                android:paddingTop="10sp"
+                android:paddingEnd="15sp"
+                android:paddingBottom="10sp"
+                android:text="-5 lbs"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/black"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="15sp"
+                android:paddingTop="5sp"
+                android:paddingEnd="15sp"
+                android:paddingBottom="10sp"
+                android:text="Goal Weight"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="15sp"
+                android:paddingTop="5sp"
+                android:paddingEnd="15sp"
+                android:paddingBottom="10sp"
+                android:text="Goal Range"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="15sp"
+                android:paddingTop="5sp"
+                android:paddingEnd="15sp"
+                android:paddingBottom="10sp"
+                android:text="Current"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="15sp"
+                android:paddingTop="5sp"
+                android:paddingEnd="15sp"
+                android:paddingBottom="10sp"
+                android:text="Weight Change"
+                android:textAlignment="center" />
+        </TableRow>
+
+    </TableLayout>
+
+    <EditText
+        android:id="@+id/editDailyWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:ems="10"
+        android:hint="Daily Weight"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tableLayout" />
+
+    <Button
+        android:id="@+id/addWeightButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="AddWeight"
+        android:text="Add Daily Weight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+    <Button
+        android:id="@+id/sevenDBtn"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginTop="30dp"
+        android:onClick="sevenD"
+        android:text="7D"
+        app:layout_constraintEnd_toStartOf="@+id/thirtyDBtn"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+    <Button
+        android:id="@+id/thirtyDBtn"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginTop="30dp"
+        android:onClick="thirtyD"
+        android:text="30D"
+        app:layout_constraintEnd_toStartOf="@+id/ninetyDBtn"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+    <Button
+        android:id="@+id/ninetyDBtn"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="30dp"
+        android:onClick="ninetyD"
+        android:text="90D"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
