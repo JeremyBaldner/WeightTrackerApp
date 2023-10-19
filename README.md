@@ -2,7 +2,7 @@
 ![image](https://github.com/JeremyBaldner/WeightTrackerApp/assets/127251923/7cd87256-1c76-4b43-b21a-6da3aec0ba94)
 
 
-Android app that trackers the users weight over time.
+Android app that trackers the user's weight over time.
 
 - **Briefly summarize the requirements and goals of the app you developed. What user needs was this app designed to address?** <br>
 The app I developed is for users who would like to track their weight. This required a database, multiple screens, user permissions requests, and the ability to modify the data.<br>
